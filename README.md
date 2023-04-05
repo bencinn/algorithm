@@ -2,4 +2,5 @@ This repo contain all of the algorithm I implemented from https://roadmap.sh/com
 
 | Algorithm  | Rust | Python |
 | ---------- | ---- | ------ |
-| Merge sort | X    | /      |
+| Merge sort | /    | /      |
+| Quick sort | /    | /      |
