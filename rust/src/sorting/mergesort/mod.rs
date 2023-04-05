@@ -17,14 +17,14 @@ fn merge_vec(left: &mut Vec<i32>, right: &mut Vec<i32>) -> Vec<i32> {
     result
 }
 
-fn merge_sort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
+fn mergesort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
     if vector.len() == 1 {
         return vector;
     }
     let center = vector.len() / 2;
     let mut binding = vector.drain(0..center).collect();
-    let left = merge_sort(&mut binding);
-    let right = merge_sort(vector);
+    let left = mergesort(&mut binding);
+    let right = mergesort(vector);
     let merged = merge_vec(left, right);
     vector.clear();
     vector.extend(merged);
@@ -33,11 +33,11 @@ fn merge_sort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
 
 #[cfg(test)]
 mod mergesort {
-    use crate::sorting::mergesort::merge_sort;
+    use crate::sorting::mergesort::mergesort;
     use rand::{thread_rng, Rng};
     use std::time::Instant;
     #[test]
-    fn test_merge_sort() {
+    fn test_mergesort() {
         let mut rng = thread_rng();
         for _ in 0..100 {
             let mut unsorted = (0..5000)
@@ -48,14 +48,12 @@ mod mergesort {
             unsorted.sort();
             let rust_elapsed = rust_now.elapsed();
             let our_now = Instant::now();
-            merge_sort(&mut sorted);
+            mergesort(&mut sorted);
             let our_elapsed = our_now.elapsed();
             assert_eq!(&sorted, &unsorted);
             println!(
-                "rust_elapsed: {:?}, our_elapsed: {:?}, diff: {:?}",
-                rust_elapsed,
-                our_elapsed,
-                our_elapsed - rust_elapsed
+                "mergesort: rust_elapsed: {:?}, our_elapsed: {:?}",
+                rust_elapsed, our_elapsed,
             );
         }
     }
