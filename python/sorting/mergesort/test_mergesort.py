@@ -1,5 +1,4 @@
-import problem
-from itertools import permutations
+import problem_mergesort as problem
 
 # Problem 1: Given an array of integers, find the nth smallest element in the array.
 

@@ -1,5 +1,5 @@
 import quicksort
-import problem
+import problem_quicksort as problem
 
 import random
 import timeit
@@ -23,7 +23,7 @@ def test_sorting_functions():
     print(f"sorted() time for k={k}, n={n}: {sorted_time:.6f}")
     assert quick_sorted == python_sorted
 
-# Problem 1: Given an array of integers and a target value, write a function to determine if there exists a pair of elements in the array whose sum is equal to the target value. 
+# Problem 1: Given an array of integers and a target value, write a function to determine if there exists a pair of elements in the array whose sum is equal to the target value.
 
 def test_problemOne():
     assert problem.P1([1, 2, 3, 4, 5], 9) == True

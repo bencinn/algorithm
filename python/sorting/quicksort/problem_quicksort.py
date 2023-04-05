@@ -6,6 +6,7 @@ def P1(arr, target):
     if (len(arr) < 2):
         return False
     sortedArr = quicksort.quickSort(arr)
+    print(sortedArr)
     pointerOne = 0
     pointerTwo = len(arr) - 1
     while (pointerOne < pointerTwo):
@@ -16,4 +17,6 @@ def P1(arr, target):
                 pointerTwo-=1
             else:
                 pointerOne+=1
+            if pointerOne >= pointerTwo:
+                return False
     return False
