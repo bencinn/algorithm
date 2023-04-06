@@ -2,10 +2,10 @@ fn heapify(vector: &mut Vec<i32>, i: usize, n: usize) {
     let left = 2 * i;
     let right = 2 * i + 1;
     let mut largest = i;
-    if left <= n && vector[left] > vector[largest] {
+    if left < n && vector[left] > vector[largest] {
         largest = left;
     }
-    if right <= n && vector[right] > vector[largest] {
+    if right < n && vector[right] > vector[largest] {
         largest = right;
     }
     if largest != i {
