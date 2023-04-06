@@ -5,4 +5,4 @@ This repo contain all of the algorithm I implemented from https://roadmap.sh/com
 | Merge sort     | /    | /      |
 | Quick sort     | /    | /      |
 | Heap sort      | /    | /      |
-| Insertion sort | X    | /      |
+| Insertion sort | /    | /      |

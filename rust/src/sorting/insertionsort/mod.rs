@@ -1,31 +1,26 @@
-pub fn quicksort(array: &mut [i32]) -> &mut [i32] {
-    if array.len() <= 1 {
-        return array;
-    }
-    let pivot = array.len() - 1;
-    let mut i = 0;
-    for j in 0..pivot {
-        if array[j] < array[pivot] {
-            array.swap(i, j);
-            i += 1;
+fn insertionsort(mut array: Vec<i32>) -> Vec<i32> {
+    println!("{:?}", array);
+    for i in 1..array.len() {
+        let key = array[i];
+        let mut j = i as i32 - 1;
+        while j >= 0 && array[j as usize] > key {
+            array[j as usize + 1] = array[j as usize];
+            println!("{:?}", array);
+            j -= 1;
         }
+        array[(j + 1) as usize] = key;
+        println!("{:?}", array);
     }
-    array.swap(pivot, i);
-    let (left, right) = array.split_at_mut(i);
-    let right = &mut right[1..];
-
-    quicksort(left);
-    quicksort(right);
     array
 }
 
 #[cfg(test)]
-mod quicksort {
-    use crate::sorting::quicksort::quicksort;
+mod insertionsort {
+    use crate::sorting::insertionsort::insertionsort;
     use rand::{thread_rng, Rng};
     use std::time::Instant;
     #[test]
-    fn test_quicksort() {
+    fn test_insertionsort() {
         let mut rng = thread_rng();
         for _ in 0..100 {
             let mut unsorted = (0..100)
@@ -36,7 +31,7 @@ mod quicksort {
             unsorted.sort();
             let rust_elapsed = rust_now.elapsed();
             let our_now = Instant::now();
-            quicksort(&mut sorted);
+            sorted = insertionsort(sorted.clone());
             let our_elapsed = our_now.elapsed();
             assert_eq!(&sorted, &unsorted);
             println!(

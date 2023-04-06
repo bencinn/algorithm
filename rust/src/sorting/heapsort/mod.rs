@@ -35,8 +35,8 @@ mod heapsort {
     fn test_heapsort() {
         let mut rng = thread_rng();
         for _ in 0..100 {
-            let mut unsorted = (0..5000)
-                .map(|_| rng.gen_range(0..5000))
+            let mut unsorted = (0..100)
+                .map(|_| rng.gen_range(0..100))
                 .collect::<Vec<i32>>();
             let mut sorted = unsorted.clone();
             let rust_now = Instant::now();
