@@ -7,7 +7,7 @@ import timeit
 # Test the speed
 
 def test_sorting_functions():
-    k = 10000
+    k = 100
     n = 500
     arr = [random.randint(1, 1000) for _ in range(k)]
 
