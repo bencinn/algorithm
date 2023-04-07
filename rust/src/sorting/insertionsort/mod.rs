@@ -1,15 +1,12 @@
 fn insertionsort(mut array: Vec<i32>) -> Vec<i32> {
-    println!("{:?}", array);
     for i in 1..array.len() {
         let key = array[i];
         let mut j = i as i32 - 1;
         while j >= 0 && array[j as usize] > key {
             array[j as usize + 1] = array[j as usize];
-            println!("{:?}", array);
             j -= 1;
         }
         array[(j + 1) as usize] = key;
-        println!("{:?}", array);
     }
     array
 }
