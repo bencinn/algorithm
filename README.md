@@ -6,3 +6,4 @@ This repo contain all of the algorithm I implemented from https://roadmap.sh/com
 | Quick sort     | /    | /      |
 | Heap sort      | /    | /      |
 | Insertion sort | /    | /      |
+| Selection sort | X    | /      |

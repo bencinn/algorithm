@@ -11,17 +11,17 @@ def test_sorting_functions():
     n = 500
     arr = [random.randint(1, 1000) for _ in range(k)]
 
-    # test quickSort()
-    quickSort_time = timeit.timeit(lambda: mergesort.mergeSort(arr.copy()), number=n)
-    quick_sorted = mergesort.mergeSort(arr.copy())
+    # test mergeSort()
+    mergeSort_time = timeit.timeit(lambda: mergesort.mergeSort(arr.copy()), number=n)
+    merge_sorted = mergesort.mergeSort(arr.copy())
 
     # test sorted()
     sorted_time = timeit.timeit(lambda: sorted(arr.copy()), number=n)
     python_sorted = sorted(arr.copy())
 
-    print(f"quickSort() time for k={k}, n={n}: {quickSort_time:.6f}")
+    print(f"mergeSort() time for k={k}, n={n}: {mergeSort_time:.6f}")
     print(f"sorted() time for k={k}, n={n}: {sorted_time:.6f}")
-    assert quick_sorted == python_sorted
+    assert merge_sorted == python_sorted
 
 # Problem 1: Given an array of integers, find the nth smallest element in the array.
 
