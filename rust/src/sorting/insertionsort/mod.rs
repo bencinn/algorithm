@@ -1,4 +1,4 @@
-fn insertionsort(mut array: Vec<i32>) -> Vec<i32> {
+pub fn insertionsort(mut array: Vec<i32>) -> Vec<i32> {
     for i in 1..array.len() {
         let key = array[i];
         let mut j = i as i32 - 1;

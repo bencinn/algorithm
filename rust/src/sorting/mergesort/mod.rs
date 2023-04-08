@@ -17,7 +17,7 @@ fn merge_vec(left: &mut Vec<i32>, right: &mut Vec<i32>) -> Vec<i32> {
     result
 }
 
-fn mergesort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
+pub fn mergesort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
     if vector.len() == 1 {
         return vector;
     }

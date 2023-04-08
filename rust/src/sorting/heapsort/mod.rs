@@ -14,7 +14,7 @@ fn heapify(vector: &mut Vec<i32>, i: usize, n: usize) {
     }
 }
 
-fn heapsort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
+pub fn heapsort(vector: &mut Vec<i32>) -> &mut Vec<i32> {
     let n = vector.len();
     for i in (0..=n / 2).rev() {
         heapify(vector, i, n);

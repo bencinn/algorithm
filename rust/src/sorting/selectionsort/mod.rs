@@ -1,4 +1,4 @@
-fn selectionsort(mut array: Vec<i32>) -> Vec<i32> {
+pub fn selectionsort(mut array: Vec<i32>) -> Vec<i32> {
     for i in 0..array.len() {
         let mut minimum_index = i;
         for j in i + 1..array.len() {
