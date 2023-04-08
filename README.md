@@ -7,4 +7,4 @@ This repo contain all of the algorithm I implemented from https://roadmap.sh/com
 | Heap sort      | /    | /      |
 | Insertion sort | /    | /      |
 | Selection sort | /    | /      |
-| Bubble sort    | /    | X      |
+| Bubble sort    | /    | /      |
